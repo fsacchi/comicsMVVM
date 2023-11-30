@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Comics</string>
+    <string name="lbl_try_again">Tentar novamente</string>
+    <string name="lbl_title_error">Ops… Algo deu errado!</string>
+    <string name="msg_error_default"> Ocorreu um erro desconhecido ao carregar as comics.</string>
+
+</resources>

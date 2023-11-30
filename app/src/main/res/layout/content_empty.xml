@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="visible"
+            type="Boolean" />
+
+        <variable
+            name="errorMessage"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="@dimen/layout_extra_padding"
+        app:visible="@{visible}">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_empty_key"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:tint="@color/purple_500"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_warning_tip" />
+
+                <TextView
+                    android:id="@+id/tv_empty_key"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layout_padding_ten"
+                    android:textAlignment="center"
+                    android:text="@string/lbl_title_error"
+                    android:textSize="@dimen/large_extra_text_size"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_empty_key"/>
+
+                <TextView
+                    android:id="@+id/tv_empty_message"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_marginTop="@dimen/layout_extra_padding"
+                    android:text="@{errorMessage}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/default_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_empty_key"
+                    app:visible="@{errorMessage != null}"
+                    tools:text="Aqui vai a mensagem de erro da API" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_action"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_width="@dimen/button_width"
+                    android:layout_marginTop="@dimen/layout_extra_extra_padding"
+                    android:text="@string/lbl_try_again"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_empty_message"
+                    app:layout_constraintVertical_bias="1.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

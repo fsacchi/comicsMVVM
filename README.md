@@ -1,5 +1,5 @@
 # Comics (Data Binding)
-List comics app using API Android Room built with jetpack Data Binding and MVVM architecture splited by modules<br>
+List comics app using [Comics API](https://developer.marvel.com/) built with jetpack Data Binding and MVVM architecture splited by modules<br>
 
 # Main Features
 - Comics List
